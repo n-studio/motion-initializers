@@ -52,7 +52,7 @@ else
 end
 
 @button._!{maybe_not_defined_method}
-=> raise an error is button is nil
+=> raise an error if button is nil
 ```
 
 That is said, I don't find this syntax very nice.
