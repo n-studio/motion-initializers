@@ -10,7 +10,9 @@ Please don't use it in production!
 
 ## Installation
 
+```
 gem 'motion-initializers', git: 'https://github.com/n-studio/motion-initializers.git'
+```
 
 ## Usage
 
@@ -57,12 +59,12 @@ end
 
 That is said, I don't find this syntax very nice.
 
-Swift
+*Swift*
 ```swift
 john.residence?[0].name
 ```
 
-Ruby
+*Ruby*
 ```ruby
 john.residence && john.residence[0] ? john.residence[0].name : nil # old way
 john.residence._?{|r| r[0]}._?{name} # nay
