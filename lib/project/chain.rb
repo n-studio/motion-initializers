@@ -1,6 +1,12 @@
 # Inspired by http://blog.thoughtfolder.com/2008-03-16-navigating-nil-method-chaining-in-ruby.html
 # https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/OptionalChaining.html
 
+class OptionalChainingError < StandardError
+  def message
+    "Unexpectedly found nil while unwrapping an Optional value"
+  end
+end
+
 class NSObject
   def _?(method = nil, *args, &block)
     if block_given? && block.arity == 1
@@ -22,6 +28,6 @@ class NilClass
   end
   
   def _!(method = nil, *args, &block)
-    raise "You got a nil in your chain!"
+    raise OptionalChainingError
   end
 end

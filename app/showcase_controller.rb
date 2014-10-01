@@ -33,6 +33,12 @@ class ShowcaseController < UIViewController
     super
     @view = ZombieView.new(frame: [[0, 230], [50, 50]])
     self.view.addSubview @view
+    
+    # test exception
+    @nil_variable = nil
+    @nil_variable._!{size}
+  rescue OptionalChainingError => e
+    NSLog "Fatal error: " + e.message
   end
   
   def viewWillDisappear(animated)
